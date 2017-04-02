@@ -1,0 +1,50 @@
+<%= form_for @post do |f| %>
+  
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :published_on %>
+    <%= f.text_field :published_on, class: 'datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :published_end %>
+    <%= f.text_field :published_end, class: 'datepicker' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  
+  <div class="field">
+    <h4>Event repeat:</h4>
+  </div>
+  
+  <div class="radio">
+    <label>
+      <%= f.radio_button :povtor, 'day' %>
+      Every day
+    </label><br />
+    <label>
+      <%= f.radio_button :povtor, 'week' %>
+      Every week
+    </label><br />
+    <label>
+      <%= f.radio_button :povtor, 'month' %>
+      Every month
+    </label><br />
+    <label>
+      <%= f.radio_button :povtor, 'year' %>
+      Every year
+    </label><br />
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Сохранить' %>
+  </div>
+
+<% end %>

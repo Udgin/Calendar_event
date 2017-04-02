@@ -1,0 +1,16 @@
+<h1><%= @post.title %></h1>
+
+<p class="info">Published on <%= @post.published_on %></p>
+
+<p class="info">Published end <%= @post.published_end %></p>
+
+<%= simple_format @post.body %>
+
+<p>
+<%= link_to 'Изменить', edit_post_path(@post) %>
+|
+<%= link_to 'Удалить', post_path(@post), method: :delete, data: { confirm: 'Вы уверены?' } %>
+</p>
+
+
+<p><%= link_to "Back to Posts", posts_path %></p>

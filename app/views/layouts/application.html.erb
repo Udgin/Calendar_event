@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div id="container">
+        
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <%= link_to 'Все статьи', posts_path %>
+        |
+        <%= link_to 'Новая статья', new_post_path %>
+        |
+
+        <% if user_signed_in? %>
+        Hello, <%= current_user.username %> | <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <% else %>
+        <%= link_to 'Sign in', new_user_session_path %>
+        <% end %>
+
+        <%= yield %>
+    
+    </div>
+  </body>
+</html>
